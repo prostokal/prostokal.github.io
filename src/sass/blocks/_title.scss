@@ -2,7 +2,12 @@
     font-weight: bold;
     font-size: 36px;
     line-height: 60px;
-
+    
+    &_fz12 {
+        font-size: 12px;
+        line-height: normal;
+        font-weight: normal;
+    }
     &_fz14 {
         font-size: 14px;
         line-height: 21px;
@@ -12,11 +17,28 @@
         line-height: 24px;
         font-weight: bold;
     }
+    &_fz20 {
+        font-size: 20px;
+        line-height: 30px;
+    }
     &_fz48 {
         font-size: 48px;
     }
     &_fz36 {
         font-size: 36px;
         line-height: normal;
+    }
+    &__section-title {
+        position: relative;
+        text-align: center;
+        @include before_circle;
+        &:before {
+            left: 50%;
+            transform: translateX(-50%);
+            top: -6px;
+        }
+    }
+    &__section-subtitle {
+        text-align: center;
     }
 }
