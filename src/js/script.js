@@ -1,16 +1,7 @@
-const hamburger = document.querySelector('.hamburger'),
-    menu = document.querySelector('.menu'),
-    close = document.querySelector('.menu__close');
-hamburger.addEventListener('click', () => {
-    menu.classList.add('active');
-});
+import {changeMenu} from "./modules/menu.js"
+import {fillLines} from "./modules/used.js"
 
-close.addEventListener('click', () => {
-    menu.classList.remove('active');
-});
 
-const  counters = document.querySelectorAll('.used__percent'),
-    lines = document.querySelectorAll('.used__slider span');
-counters.forEach( (item, i)=> {
-    lines[i].style.width = item.innerHTML;
-});
+changeMenu('.hamburger', '.menu', '.menu__close', 'active');
+
+fillLines('.used__percent', '.used__slider span');

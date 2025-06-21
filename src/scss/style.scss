@@ -1,0 +1,16 @@
+@use 'libs/bootstrap-reboot.min';
+@use 'libs/custom-boot';
+
+// Подключение блоков
+@use 'blocks/promo';
+@use 'blocks/title';
+@use 'blocks/button';
+@use 'blocks/sidepanel';
+@use 'blocks/menu';
+@use 'blocks/about';
+@use 'blocks/resume';
+@use 'blocks/used';
+@use 'blocks/portfolio';
+@use 'blocks/price';
+@use 'blocks/contacts';
+@use 'blocks/media';

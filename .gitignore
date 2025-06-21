@@ -1,0 +1,17 @@
+node_modules
+package-lock.json
+# Keep environment variables out of version control
+.env
+.env.build
+.env.local
+.next
+.DS_Store
+.vscode
+yarn-error.log
+.vercel
+cors.json
+src/data/local/*
+
+# pnpm specific
+.pnpm-debug.log
+.pnpm-store/

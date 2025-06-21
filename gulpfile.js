@@ -1,86 +1,43 @@
-const gulp = require("gulp");
-const browserSync = require("browser-sync");
-const sass = require("gulp-sass")(require("sass"));
-const cleanCSS = require("gulp-clean-css");
-const autoprefixer = require("gulp-autoprefixer");
-const rename = require("gulp-rename");
-const htmlmin = require("gulp-htmlmin");
+// Main module;
+import gulp from "gulp";
 
-gulp.task("server", function () {
-	browserSync({
-		server: {
-			baseDir: "dist",
-		},
-	});
+// Import main
+import { path } from "./gulp/config/path.js";
+import { plugins } from "./gulp/config/plugins.js";
 
-	gulp.watch("src/*.html").on("change", browserSync.reload);
-});
 
-gulp.task("styles", function () {
-	return gulp
-		.src("src/sass/**/*.+(scss|sass)")
-		.pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-		.pipe(rename({ suffix: ".min", prefix: "" }))
-		.pipe(autoprefixer())
-		.pipe(cleanCSS({ compatibility: "ie8" }))
-		.pipe(gulp.dest("dist/css"))
-		.pipe(browserSync.stream());
-});
+global.app =  {
+	path: path,
+	gulp: gulp,
+	plugins: plugins
+}
 
-gulp.task("watch", function () {
-	gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
-	gulp.watch("src/*.html").on("change", gulp.parallel("html"));
-	gulp.watch("src/js/**/*.js").on("change", gulp.parallel("scripts"));
-	gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
-	gulp.watch("src/icons/**/*").on("all", gulp.parallel("icons"));
-	gulp.watch("src/img/**/*").on("all", gulp.parallel("images"));
-});
+// Import tasks
+import { reset } from "./gulp/tasks/reset.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { html } from './gulp/tasks/html.js';
+import { img } from "./gulp/tasks/img.js";
+import { icons } from "./gulp/tasks/icons.js";
+import { fonts } from "./gulp/tasks/fonts.js";
+import { server } from './gulp/tasks/server.js';
+import { js } from "./gulp/tasks/js.js";
 
-gulp.task("html", function () {
-	return gulp
-		.src("src/*.html")
-		.pipe(htmlmin({ collapseWhitespace: true }))
-		.pipe(gulp.dest("dist/"));
-});
+// Watcher
+const watcher = () => {
+	gulp.watch(path.watch.fonts, fonts);
+	gulp.watch(path.watch.html, html);
+	gulp.watch(path.watch.scss, scss);
+	gulp.watch(path.watch.img, img);
+	gulp.watch(path.watch.icons, icons);
+	gulp.watch(path.watch.js, js); 
+}
 
-gulp.task("scripts", function () {
-	return gulp
-		.src("src/js/**/*.js")
-		.pipe(gulp.dest("dist/js"))
-		.pipe(browserSync.stream());
-});
+// Run multiple tasks
+const rebuild = gulp.parallel(html, scss, js);
+const images = gulp.parallel(img, icons);
+const dev = gulp.series(reset, rebuild, images,fonts,  gulp.parallel(watcher, server));
 
-gulp.task("fonts", function () {
-	return gulp
-		.src("src/fonts/**/*")
-		.pipe(gulp.dest("dist/fonts"))
-		.pipe(browserSync.stream());
-});
 
-gulp.task("icons", function () {
-	return gulp
-		.src("src/icons/**/*")
-		.pipe(gulp.dest("dist/icons"))
-		.pipe(browserSync.stream());
-});
 
-gulp.task("images", function () {
-	return gulp
-		.src("src/img/**/*")
-		.pipe(gulp.dest("dist/img"))
-		.pipe(browserSync.stream());
-});
-
-gulp.task(
-	"default",
-	gulp.parallel(
-		"watch",
-		"server",
-		"styles",
-		"scripts",
-		"fonts",
-		"icons",
-		"html",
-		"images"
-	)
-);
+// Run tasks default
+gulp.task('default', dev);

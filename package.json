@@ -1,27 +1,30 @@
 {
-	"name": "portfolio_starter",
-	"version": "1.0.0",
-	"description": "",
-	"main": "gulpfile.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"browser-sync": "^2.29.3",
-		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^8.0.0",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-cli": "^2.3.0",
-		"gulp-htmlmin": "^5.0.1",
-		"gulp-rename": "^2.0.0",
-		"gulp-sass": "^5.1.0",
-		"sass": "^1.70.0"
-	},
-	"browserslist": [
-		"last 2 chrome versions",
-		"last 2 firefox versions",
-		"last 2 ios versions"
-	]
+  "name": "calculator-website",
+  "version": "1.0.0",
+  "description": "just practice",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JDH",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.38",
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-webp": "^5.0.0",
+    "json-server": "^1.0.0-beta.3",
+    "sass": "^1.87.0",
+    "webpack-stream": "^7.0.0"
+  }
 }
