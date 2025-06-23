@@ -69,7 +69,7 @@
     }
 @media (max-width: 992px) {
     .promo {
-        background: #f7cec1 url(../img/bg/n-fa.png) no-repeat bottom;
+        background: #fccabc url(../img/bg/n-fa.png) no-repeat bottom;
     }
     .container {
         max-width: 720px;
@@ -149,7 +149,7 @@
     }
     .promo {
         padding-top: 210px;
-        background: #efc9ba url("../img/bg/n-fa.png") no-repeat bottom / 100%;
+        background: #fccabc url("../img/bg/n-fa.png") no-repeat bottom / 100%;
         &__title {
             width: 300px;
             line-height: 39px;
@@ -247,7 +247,8 @@
         }
     }
     .promo {
-        background: #efc9ba url("../img/bg/n-fa.png") no-repeat bottom / 100%;
+        background: #fccabc url(../img/bg/575-n.png) no-repeat bottom / 100% 43%;
+        padding-top: 180px;
         &__btns {
             margin-top: 30px;
         }
@@ -305,6 +306,21 @@
         }
         &__policy {
             margin-top: 10px;
+        }
+    }
+    .modal {
+        &__dialog {
+            max-width: 80%;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__input {
+            width: 90%;
+        }
+        button {
+            width: 90%;
+            font-size: 14px;
         }
     }
 }

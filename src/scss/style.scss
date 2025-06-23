@@ -1,5 +1,4 @@
 @use 'libs/bootstrap-reboot.min';
-@use 'libs/custom-boot';
 
 // Подключение блоков
 @use 'blocks/promo';
@@ -13,4 +12,8 @@
 @use 'blocks/portfolio';
 @use 'blocks/price';
 @use 'blocks/contacts';
+@use 'blocks/modal';
+
+@use 'libs/custom-boot';
+
 @use 'blocks/media';

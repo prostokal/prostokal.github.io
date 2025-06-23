@@ -1,5 +1,13 @@
 import htmlmin from 'gulp-htmlmin';
 import gulpInclude from 'gulp-file-include';
+import gulpIf from 'gulp-if';
+
+
+
+function isIndex(file) {
+  return file.basename === 'index.html';
+}
+
 
 export const html = () => {
 
@@ -12,6 +20,12 @@ export const html = () => {
       }))
     .pipe(gulpInclude())
     .pipe(htmlmin({ collapseWhitespace: true }))
+    // .pipe(gulpIf(
+    //   isIndex,
+    //   app.gulp.dest(app.path.build.html),
+    //   app.gulp.dest(`${app.path.build.html}/html/`)
+    // ))
+
     .pipe(app.gulp.dest(app.path.build.html))
     
     .pipe(app.plugins.browsersync.stream());

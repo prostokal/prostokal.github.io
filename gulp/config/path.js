@@ -18,7 +18,7 @@ export const path = {
     },
     src: {
         fonts: `${srcFolder}/fonts/**/*.{woff,woff2,ttf,otf}`,
-        html: `${srcFolder}/*.html`,
+        html: `${srcFolder}/**/*.html`,
         js: `${srcFolder}/js/**/*.js`,
         img: `${srcFolder}/img/**/*`, 
         icons: `${srcFolder}/icons/**/*`,
@@ -27,7 +27,7 @@ export const path = {
     },
     watch: {
         fonts: `${srcFolder}/fonts/**/*.{woff,woff2,ttf,otf}`,
-        html: `${srcFolder}/**/*.html`,
+        html: `${srcFolder}/**/**/*.html`,
         img: `${srcFolder}/img/**/*`,
         icons: `${srcFolder}/icons/**/*`,
         scss: `${srcFolder}/scss/**/*.scss`,
