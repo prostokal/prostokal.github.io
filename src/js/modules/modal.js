@@ -1,8 +1,9 @@
 function openModal(modalSelector) {
     const modal = document.querySelector(modalSelector);
-    
+    modal.classList.remove('hide')
     modal.classList.add('show')
     document.body.style.overflow = 'hidden'
+    
     // console.log(modalTimer);
     // if (modalTimer) {
     //     clearInterval(modalTimer);
@@ -13,7 +14,8 @@ function closeModal(modalSelector) {
     const modal = document.querySelector(modalSelector);
 
     modal.classList.remove('show')
-    document.body.style.overflow = 'none'
+    modal.classList.add('hide')
+    document.body.style.overflow = ''
 }
 function modal(triggerSelector, modalSelector) {
     const modal = document.querySelector(modalSelector),

@@ -1,6 +1,7 @@
 export const server = (done) => {
     app.plugins.browsersync.init(
-        {server: {
+        {
+        server: {
             baseDir: `${app.path.build.html}`  
         },
         notify: true,

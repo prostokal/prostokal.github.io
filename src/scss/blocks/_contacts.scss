@@ -3,6 +3,7 @@
 .contacts {
     padding: 120px 0 90px 0;
     &__wrapper {
+        position: relative;
         padding: 0 35px 0 52px;
         display: grid;
         grid-template-columns: 400px 585px;

@@ -49,8 +49,9 @@
     }
     &__close {
         position: absolute;
+        display: block;
         top: 25px;
-        right: 25px;
+        right: 30px;
         cursor: pointer;
 
     }
