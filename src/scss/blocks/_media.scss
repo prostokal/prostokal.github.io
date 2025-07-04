@@ -131,7 +131,7 @@
         }
         &__wrapper {
             grid-template-columns: 615px;
-            justify-content: space-around;
+            justify-content: left;
         }
     }
 }
@@ -247,7 +247,7 @@
         }
     }
     .promo {
-        background: #fccabc url(../img/bg/575-n.png) no-repeat bottom / 100% 43%;
+        background: #FCCABB url(../img/bg/n-fa.png) no-repeat bottom / 190% 100%;
         padding-top: 180px;
         &__btns {
             margin-top: 30px;
