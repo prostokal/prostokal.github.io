@@ -11,6 +11,6 @@ yarn-error.log
 cors.json
 src/data/local/*
 src/*
-db.json
 .pnpm-debug.log
-.pnpm-store/
+.pnpm-store/src/
+db.json
