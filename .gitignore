@@ -1,6 +1,5 @@
 node_modules
 package-lock.json
-# Keep environment variables out of version control
 .env
 .env.build
 .env.local
@@ -13,6 +12,5 @@ cors.json
 src/data/local/*
 src/*
 db.json
-# pnpm specific
 .pnpm-debug.log
 .pnpm-store/
